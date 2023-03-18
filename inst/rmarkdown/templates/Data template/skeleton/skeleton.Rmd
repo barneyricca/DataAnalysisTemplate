@@ -1,0 +1,82 @@
+---
+title: "Analysis"
+author: "BPR"
+date: "`r Sys.Date()`"
+# Knit to another directory
+knit: (function(input, ...) {
+      rmarkdown::render(input,
+                        output_dir = "../Output")})
+output: 
+  word_document:
+    reference_docx: "~/APA template.docx"
+---
+
+```{r setup, include=FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+if(!is.element("here",
+               installed.packages()[,1])) {
+  install.packages("here")
+}
+library("here", character.only=TRUE,
+        quietly=TRUE,verbose=FALSE)
+
+set_here()      # This helps with folder structure when shifting computers
+
+if(dir.exists(here("Scripts")) == FALSE) {
+  dir.create(here("Scripts"))
+}
+
+if(file.exists(here("Scripts/Setup.R")) == FALSE) {
+  file.copy(from = "~/OneDrive - University of Colorado Colorado Springs/Research/Setup.R",
+            to = here("Scripts/Setup.R"),
+            overwrite = FALSE)
+}
+
+source(here("Setup.R"))
+```
+Bernard Ricca$^1$
+
+> Until full authorship is decided, the authors are listed in alphabetical order
+
+$^1$Lyda Hill Institute for Human Resilience \@ UCCS.
+\newpage
+
+# Abstract
+\newpage
+
+## Research Questions
+
+# Methods
+In the following sections, we report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. We used the *R Statistical Environment* (*R*; R Core Team, 2022) and the *RStudio Integrated Development Environment* (Posit team, 2022) for *R* for our data analysis. All data and code used in this study, along with system and environment information, are available at
+<https://github.com/barneyricca/PROJECT_NAME_GOES_HERE>.
+
+## Data
+
+### Participants
+
+### Materials
+
+### Methods
+
+## Analytic Plan
+
+# Results
+
+# Discussion
+
+# Conclusions
+
+# References
+Posit team (2022). RStudio: Integrated Development Environment for R. Posit Software, PBC, Boston, MA. URL http://www.posit.co/.
+
+R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+\newpage
+
+# Tables
+\newpage
+
+# Figures
+\newpage
+
+# Supplemental Information
